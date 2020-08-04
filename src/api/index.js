@@ -46,3 +46,12 @@ export const getWorldwideData = async () => {
     console.log("error.message getAll", error.message);
   }
 };
+
+export const getHistoricalAll = async () => {
+  try {
+    const { data } = await axios.get(`${url}/historical/all?lastdays=120`);
+    return data;
+  } catch (error) {
+    console.log("error.message getAll", error.message);
+  }
+};
