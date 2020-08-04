@@ -15,6 +15,10 @@ https://disease.sh/
 
 ### After this project
 
+I have understand about
+
+- Async await, fetch API with axios, Promise.all
+
 ### Set up
 
 `npm install` and `npm start`
