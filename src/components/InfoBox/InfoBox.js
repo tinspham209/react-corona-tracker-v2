@@ -5,12 +5,13 @@ import Spinner from "../UI/Spinner/Spinner";
 
 const InfoBox = (props) => {
   const { title, cases, total } = props;
-  if (!title || !cases || !total) {
-    return <Spinner />;
-  }
-  return (
-    <Card>
-      <CardContent className="infoBox">
+
+  let infoBoxContent;
+  if (title === undefined || cases === undefined || total === undefined) {
+    infoBoxContent = <Spinner />;
+  } else {
+    infoBoxContent = (
+      <React.Fragment>
         <Typography className="infoBox__title" color="textSecondary">
           {title}
         </Typography>
@@ -30,7 +31,13 @@ const InfoBox = (props) => {
           {/* + {cases} */}
           +<CountUp start={0} end={cases} duration={1.5} separator="," />
         </Typography>
-      </CardContent>
+      </React.Fragment>
+    );
+  }
+
+  return (
+    <Card>
+      <CardContent className="infoBox">{infoBoxContent}</CardContent>
     </Card>
   );
 };
