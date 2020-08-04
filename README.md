@@ -18,3 +18,7 @@
 `npm install` and `npm start`
 
 ### Screenshot
+
+- Wire frame:
+
+<img src="https://i.imgur.com/lN8xXGg.png" />
