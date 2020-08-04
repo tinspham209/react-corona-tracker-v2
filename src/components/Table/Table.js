@@ -1,4 +1,5 @@
 import React from "react";
+import CountUp from "react-countup";
 import Spinner from "../UI/Spinner/Spinner";
 import "./Table.css";
 
@@ -14,7 +15,9 @@ const Table = (props) => {
           <tr>
             <td>{country}</td>
             <td>
-              <strong>{cases}</strong>
+              <strong>
+                <CountUp start={0} end={cases} duration={1.5} separator="," />
+              </strong>
             </td>
           </tr>
         ))}
