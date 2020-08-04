@@ -12,3 +12,18 @@ export const getCountriesData = async () => {
       return countries;
     });
 };
+
+export const getCountryData = async (countryCode) => {
+  let urlCountry = "";
+  countryCode === "worldwide"
+    ? (urlCountry = `${url}/all`)
+    : (urlCountry = `${url}/countries/${countryCode}`);
+
+  return await fetch(urlCountry)
+    .then((response) => response.json())
+    .catch((error) => console.log("error.message getCountry", error.message))
+    .then((data) => {
+      console.log("countryData", data);
+      return data;
+    });
+};
