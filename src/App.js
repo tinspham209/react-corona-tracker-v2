@@ -7,13 +7,14 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-import { getCountriesData } from "./api";
+import { getCountriesData, getCountryData } from "./api";
 import InfoBox from "./components/InfoBox/InfoBox";
 import Map from "./components/Map/Map";
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
+  const [countryInfo, setCountryInfo] = useState({});
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -22,10 +23,12 @@ function App() {
 
     fetchAPI();
   }, [setCountries]);
-  console.log("countries", countries);
 
-  const onCountryChange = (event) => {
-    setCountry(event.target.value);
+  const onCountryChange = async (event) => {
+    const countryCode = event.target.value;
+    const countryData = await getCountryData(countryCode);
+    setCountryInfo(countryData);
+    setCountry(countryCode);
   };
 
   return (
@@ -43,9 +46,7 @@ function App() {
                 Worldwide
               </MenuItem>
               {countries.map((country) => (
-                <MenuItem key={country.value} value={country.value}>
-                  {country.name}
-                </MenuItem>
+                <MenuItem value={country.value}>{country.name}</MenuItem>
               ))}
             </Select>
           </FormControl>
