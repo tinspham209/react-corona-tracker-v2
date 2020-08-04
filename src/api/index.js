@@ -15,6 +15,15 @@ export const getCountriesData = async () => {
   }
 };
 
+export const getTableData = async () => {
+  try {
+    const { data } = await axios.get(`${url}/countries`);
+    return data;
+  } catch (error) {
+    console.log("error.message getCountries");
+  }
+};
+
 export const getCountryData = async (countryCode) => {
   let urlCountry = "";
   countryCode === "worldwide"
