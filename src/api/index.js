@@ -1,16 +1,18 @@
+import axios from "axios";
+
 const url = "https://disease.sh/v3/covid-19";
 
 export const getCountriesData = async () => {
-  return await fetch(`${url}/countries`)
-    .then((response) => response.json())
-    .catch((error) => console.log("error.message getCountries", error.message))
-    .then((data) => {
-      const countries = data.map((country) => ({
-        name: country.country, //Vietnam
-        value: country.countryInfo.iso2, //VN
-      }));
-      return countries;
-    });
+  try {
+    const { data } = await axios.get(`${url}/countries`);
+    const countries = data.map((country) => ({
+      name: country.country, //Vietnam
+      value: country.countryInfo.iso2, //VN
+    }));
+    return countries;
+  } catch (error) {
+    console.log("error.message getCountries");
+  }
 };
 
 export const getCountryData = async (countryCode) => {
@@ -19,11 +21,10 @@ export const getCountryData = async (countryCode) => {
     ? (urlCountry = `${url}/all`)
     : (urlCountry = `${url}/countries/${countryCode}`);
 
-  return await fetch(urlCountry)
-    .then((response) => response.json())
-    .catch((error) => console.log("error.message getCountry", error.message))
-    .then((data) => {
-      console.log("countryData", data);
-      return data;
-    });
+  try {
+    const { data } = await axios.get(urlCountry);
+    return data;
+  } catch (error) {
+    console.log("error.message getCountry", error.message);
+  }
 };
