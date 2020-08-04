@@ -7,6 +7,8 @@
 
 ### API used
 
+https://disease.sh/
+
 ### Deploy
 
 ### Function
