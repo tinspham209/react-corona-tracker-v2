@@ -28,3 +28,12 @@ export const getCountryData = async (countryCode) => {
     console.log("error.message getCountry", error.message);
   }
 };
+
+export const getWorldwideData = async () => {
+  try {
+    const { data } = await axios.get(`${url}/all`);
+    return data;
+  } catch (error) {
+    console.log("error.message getAll", error.message);
+  }
+};
