@@ -7,7 +7,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-import { getCountriesData, getCountryData } from "./api";
+import { getCountriesData, getCountryData, getWorldwideData } from "./api";
 import InfoBox from "./components/InfoBox/InfoBox";
 import Map from "./components/Map/Map";
 
@@ -15,6 +15,13 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
+
+  useEffect(() => {
+    const getAllData = async () => {
+      setCountryInfo(await getWorldwideData());
+    };
+    getAllData();
+  }, []);
 
   useEffect(() => {
     const fetchAPI = async () => {
