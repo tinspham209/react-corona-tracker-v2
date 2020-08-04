@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
 import {
-  FormControl,
-  Select,
-  MenuItem,
   Card,
   CardContent,
+  FormControl,
+  MenuItem,
+  Select,
 } from "@material-ui/core";
+import React, { useEffect, useState } from "react";
 import {
   getCountriesData,
   getCountryData,
-  getWorldwideData,
   getTableData,
+  getWorldwideData,
 } from "./api";
+
+import "./App.css";
 import InfoBox from "./components/InfoBox/InfoBox";
 import Map from "./components/Map/Map";
+import Table from "./components/Table/Table";
+import { sortData } from "./shared/util";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -31,11 +34,12 @@ function App() {
 
   useEffect(() => {
     const fetchAPI = async () => {
-      Promise.all([
-        setTableData(await getTableData()),
-        setCountries(await getCountriesData()),
-      ]);
-      setTableData(await getTableData());
+      Promise.all([await getTableData(), await getCountriesData()]).then(
+        (values) => {
+          setTableData(sortData(values[0]));
+          setCountries(values[1]);
+        }
+      );
     };
 
     fetchAPI();
@@ -93,6 +97,7 @@ function App() {
       <Card className="app__right">
         <CardContent>
           <h3>Live Case by Country</h3>
+          <Table countries={tableData} />
           {/* Table */}
           <h3>Worldwide new cases</h3>
           {/* Graph */}
