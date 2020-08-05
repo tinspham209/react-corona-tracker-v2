@@ -55,6 +55,16 @@ function App() {
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
+    const countryData = await getCountryData(countryCode);
+    setCountryInfo(countryData);
+    setCountry(countryCode);
+    setMapCenter([countryData.countryInfo.lat, countryData.countryInfo.long]);
+    setMapZoom(5);
+    /*
+      Select another country, and switch to worldwide > bug
+      This code is done, but setMapCenter is NOT
+      countryData is change, but setMapCenter is in worldwide
+
     if (countryCode === "worldwide") {
       setCountryInfo(await getWorldwideData());
       setMapCenter([14.0583, 108.2772]);
@@ -68,6 +78,7 @@ function App() {
       setCountry(countryCode);
       setCountryInfo(countryData);
     }
+    */
   };
 
   return (
