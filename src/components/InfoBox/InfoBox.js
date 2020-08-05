@@ -4,7 +4,16 @@ import CountUp from "react-countup";
 import Spinner from "../UI/Spinner/Spinner";
 import "./InfoBox.css";
 
-const InfoBox = ({ title, cases, total, ...props }) => {
+const InfoBox = ({
+  title,
+  cases,
+  active,
+  isCases,
+  isRecovered,
+  isDeaths,
+  total,
+  ...props
+}) => {
   let infoBoxContent;
   if (title === undefined || cases === undefined || total === undefined) {
     infoBoxContent = <Spinner />;
@@ -15,7 +24,9 @@ const InfoBox = ({ title, cases, total, ...props }) => {
           {title}
         </Typography>
         <Typography
-          className="infoBox__total"
+          className={`infoBox__total ${isCases && "infoBox--cases__total"} ${
+            isRecovered && "infoBox--recovered__total"
+          } ${isDeaths && "infoBox--deaths__total"}`}
           variant="h5"
           color="textSecondary"
         >
@@ -35,7 +46,14 @@ const InfoBox = ({ title, cases, total, ...props }) => {
   }
 
   return (
-    <Card onClick={props.onClick} className="infoBox">
+    <Card
+      onClick={props.onClick}
+      className={`infoBox ${active && "infoBox--selected"} ${
+        isCases && "infoBox--cases"
+      } ${isRecovered && "infoBox--recovered"} ${
+        isDeaths && "infoBox--deaths"
+      }`}
+    >
       <CardContent>{infoBoxContent}</CardContent>
     </Card>
   );
