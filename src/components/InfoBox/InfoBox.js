@@ -11,6 +11,7 @@ const InfoBox = ({
   isCases,
   isRecovered,
   isDeaths,
+  updated,
   total,
   ...props
 }) => {
@@ -40,6 +41,9 @@ const InfoBox = ({
         >
           {/* + {cases} */}
           +<CountUp start={0} end={cases} duration={1.5} separator="," />
+        </Typography>
+        <Typography color="textSecondary" variant="subtitle2">
+          {new Date(updated).toUTCString()}
         </Typography>
       </React.Fragment>
     );

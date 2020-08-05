@@ -55,11 +55,19 @@ function App() {
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
-    const countryData = await getCountryData(countryCode);
-    setCountryInfo(countryData);
-    setCountry(countryCode);
-    setMapCenter([countryData.countryInfo.lat, countryData.countryInfo.long]);
-    setMapZoom(4);
+    if (countryCode === "worldwide") {
+      setCountryInfo(await getWorldwideData());
+      setMapCenter([14.0583, 108.2772]);
+      setCountry(countryCode);
+      setMapZoom(3);
+    } else {
+      const countryData = await getCountryData(countryCode);
+      console.log("countryData", countryData);
+      setMapCenter([countryData.countryInfo.lat, countryData.countryInfo.long]);
+      setMapZoom(5);
+      setCountry(countryCode);
+      setCountryInfo(countryData);
+    }
   };
 
   return (
@@ -96,6 +104,7 @@ function App() {
             title="Infected"
             cases={countryInfo.todayCases}
             total={countryInfo.cases}
+            updated={countryInfo.updated}
           />
 
           <InfoBox
@@ -105,6 +114,7 @@ function App() {
             title="Recovered"
             cases={countryInfo.todayRecovered}
             total={countryInfo.recovered}
+            updated={countryInfo.updated}
           />
 
           <InfoBox
@@ -114,6 +124,7 @@ function App() {
             title="Deaths"
             cases={countryInfo.todayDeaths}
             total={countryInfo.deaths}
+            updated={countryInfo.updated}
           />
         </div>
         <Map
