@@ -1,9 +1,11 @@
 import React from "react";
 import { Map as LeafletMap, TileLayer } from "react-leaflet";
 import "./Map.css";
+import { showDataOnMap } from "shared/util";
 
 const Map = (props) => {
-  const { center, zoom } = props;
+  const { countries, casesType, center, zoom } = props;
+  console.log("countriesMap", countries);
   return (
     <div className="map">
       <LeafletMap center={center} zoom={zoom}>
@@ -11,6 +13,8 @@ const Map = (props) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
+        {/* Loop through countries and draw the circles */}
+        {showDataOnMap(countries, casesType)}
       </LeafletMap>
     </div>
   );
