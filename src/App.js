@@ -54,6 +54,8 @@ function App() {
     const countryData = await getCountryData(countryCode);
     setCountryInfo(countryData);
     setCountry(countryCode);
+    setMapCenter([countryData.countryInfo.lat, countryData.countryInfo.long]);
+    setMapZoom(4);
   };
 
   return (
