@@ -130,7 +130,6 @@ function App() {
         </CardContent>
         <CardContent>
           <h1>Worldwide new {casesType}</h1>
-
           <LineGraph className="app__graph" casesType={casesType} />
         </CardContent>
       </Card>
