@@ -27,7 +27,7 @@ const options = {
       {
         type: "time",
         time: {
-          format: "MM/DD/YY",
+          parser: "MM/DD/YY",
           tooltipFormat: "ll",
         },
       },
@@ -47,7 +47,7 @@ const options = {
   },
 };
 
-const LineGraph = ({ casesType = "cases" }) => {
+const LineGraph = ({ casesType = "cases", ...props }) => {
   const [data, setData] = useState({});
 
   const buildChartData = (data, casesType) => {
@@ -77,7 +77,7 @@ const LineGraph = ({ casesType = "cases" }) => {
   }, [casesType]);
 
   return (
-    <div>
+    <div className={props.className}>
       {data?.length > 0 && (
         <Line
           options={options}
