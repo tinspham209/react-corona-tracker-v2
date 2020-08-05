@@ -76,6 +76,16 @@ const LineGraph = ({ casesType = "cases", ...props }) => {
     fetchAPI();
   }, [casesType]);
 
+  // let backgroundColor = () => {
+  //   if (casesType === "cases") {
+  //     return "rgba(204, 16, 52, 0.5)";
+  //   } else if (casesType === "recovered") {
+  //     return "rgba(125, 215, 29, 0.5)";
+  //   } else if (casesType === "deaths") {
+  //     return "rgba(251, 68, 67, 0.5)";
+  //   }
+  // };
+
   return (
     <div className={props.className}>
       {data?.length > 0 && (
@@ -84,7 +94,7 @@ const LineGraph = ({ casesType = "cases", ...props }) => {
           data={{
             datasets: [
               {
-                backgroundColor: "rgba(204,16,52,0.2",
+                backgroundColor: "rgba(204, 16, 52, 0.5)",
                 borderColor: "#CC1034",
                 data: data,
               },
