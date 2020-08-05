@@ -4,9 +4,7 @@ import CountUp from "react-countup";
 import Spinner from "../UI/Spinner/Spinner";
 import "./InfoBox.css";
 
-const InfoBox = (props) => {
-  const { title, cases, total } = props;
-
+const InfoBox = ({ title, cases, total, ...props }) => {
   let infoBoxContent;
   if (title === undefined || cases === undefined || total === undefined) {
     infoBoxContent = <Spinner />;
@@ -37,8 +35,8 @@ const InfoBox = (props) => {
   }
 
   return (
-    <Card>
-      <CardContent className="infoBox">{infoBoxContent}</CardContent>
+    <Card onClick={props.onClick} className="infoBox">
+      <CardContent>{infoBoxContent}</CardContent>
     </Card>
   );
 };
