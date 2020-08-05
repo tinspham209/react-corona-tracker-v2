@@ -43,7 +43,7 @@ function App() {
         (values) => {
           setTableData(sortData(values[0]));
           setCountries(values[1]);
-          setMapCenter(values[0]);
+          setMapCountries(values[0]);
         }
       );
     };
