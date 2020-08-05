@@ -19,12 +19,15 @@ import Map from "./components/Map/Map";
 import Table from "./components/Table/Table";
 import { sortData } from "./shared/util";
 import LineGraph from "./components/LineGraph/LineGraph";
+import "leaflet/dist/leaflet.css";
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapCenter, setMapCenter] = useState({ lat: 14.0583, lng: 108.2772 });
+  const [mapZoom, setMapZoom] = useState(3);
 
   useEffect(() => {
     const getAllData = async () => {
@@ -93,7 +96,7 @@ function App() {
             total={countryInfo.deaths}
           />
         </div>
-        <Map />
+        <Map center={mapCenter} zoom={mapZoom} />
       </div>
       <Card className="app__right">
         <CardContent>
