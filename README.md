@@ -53,6 +53,7 @@ Next step, Bugs:
 - Responsive for Logo in `Header`
 - Responsive for `Map`
 - Fix width & height for `LineGraph`
+- Change backgroundColor when click on each InfoBox in `LineGraph`
 - Select another country, and switch to worldwide > bug
 - Unique key for MenuItem in `Table`
 - Unique key in `Map`
@@ -65,11 +66,11 @@ Next step, Bugs:
 
 - Wire frame:
 
-<img src="https://i.imgur.com/lN8xXGg.png" />
+<img src="https://i.imgur.com/sIUfy9g.png" />
 
 - Finish project:
 
-<img src="https://i.imgur.com/5D2qKO4.png" />
+<img src="https://i.imgur.com/3r5YDxE.png" />
 
 - GIF:
 
