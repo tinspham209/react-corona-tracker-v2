@@ -17,6 +17,8 @@ https://disease.sh/
 
 ### Deploy
 
+https://covid-tracker-dksgsd.surge.sh
+
 ### Function
 
 - Display Infected, Recovered, Deaths of Worldwide, and 215 another countries
@@ -66,3 +68,7 @@ Next step, Bugs:
 - Finish project:
 
 <img src="https://i.imgur.com/5D2qKO4.png" />
+
+- GIF:
+
+<img src="https://media.giphy.com/media/hWp2Gm0vVVdYSwBk4c/giphy.gif"/>
