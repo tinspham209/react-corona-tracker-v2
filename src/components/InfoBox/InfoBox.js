@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent, Typography } from "@material-ui/core";
 import CountUp from "react-countup";
 import Spinner from "../UI/Spinner/Spinner";
+import "./InfoBox.css";
 
 const InfoBox = (props) => {
   const { title, cases, total } = props;
@@ -24,7 +25,7 @@ const InfoBox = (props) => {
           <CountUp start={0} end={total} duration={1.5} separator="," />
         </Typography>
         <Typography
-          className="infoBox__total"
+          className="infoBox__cases"
           variant="h6"
           color="textSecondary"
         >
