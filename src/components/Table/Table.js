@@ -68,7 +68,6 @@ const TableLiveCases = (props) => {
       </TableContainer>
     );
   }
-  console.log("countries", countries);
   return <React.Fragment>{tableContent}</React.Fragment>;
 };
 

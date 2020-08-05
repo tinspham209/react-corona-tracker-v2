@@ -5,7 +5,6 @@ import { showDataOnMap } from "shared/util";
 
 const Map = (props) => {
   const { countries, casesType, center, zoom } = props;
-  console.log("countriesMap", countries);
   return (
     <div className="map">
       <LeafletMap center={center} zoom={zoom}>
