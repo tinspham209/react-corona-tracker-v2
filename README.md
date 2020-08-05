@@ -19,6 +19,8 @@ https://disease.sh/
 
 https://covid-tracker-dksgsd.surge.sh
 
+<img src="https://media.giphy.com/media/hWp2Gm0vVVdYSwBk4c/giphy.gif"/>
+
 ### Function
 
 - Display Infected, Recovered, Deaths of Worldwide, and 215 another countries
