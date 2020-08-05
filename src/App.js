@@ -20,6 +20,7 @@ import Table from "./components/Table/Table";
 import { sortData } from "./shared/util";
 import LineGraph from "./components/LineGraph/LineGraph";
 import "leaflet/dist/leaflet.css";
+import Logo from "./components/assets/image/image.png";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -64,7 +65,12 @@ function App() {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1>COVID-19 TRACKER</h1>
+          <a
+            href="https://github.com/tinspham209/react-corona-tracker-v2"
+            className="app__header-logo"
+          >
+            <img src={Logo} alt="Logo" />
+          </a>
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"
