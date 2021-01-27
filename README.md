@@ -1,5 +1,29 @@
 # Mini Project: COVID-19 Tracker
 
+### Function
+
+- Display Infected, Recovered, Deaths of Worldwide, and 215 another countries
+- Display Table for Top live cases by Country
+- Draw Line chart for new cases
+- Draw circle of cases each country in Map
+- when click on country in Map, Popup the data of this country
+
+### Screenshot
+
+- Wire frame:
+
+<img src="https://i.imgur.com/sIUfy9g.png" />
+
+- Finish project:
+
+<img src="https://i.imgur.com/3r5YDxE.png" />
+
+<img src="https://media.giphy.com/media/hWp2Gm0vVVdYSwBk4c/giphy.gif"/>
+
+### Deploy
+
+https://covid-tracker-dksgsd.surge.sh
+
 ### Tech-Stack
 
 - React
@@ -14,20 +38,6 @@
 ### API used
 
 https://disease.sh/
-
-### Deploy
-
-https://covid-tracker-dksgsd.surge.sh
-
-<img src="https://media.giphy.com/media/hWp2Gm0vVVdYSwBk4c/giphy.gif"/>
-
-### Function
-
-- Display Infected, Recovered, Deaths of Worldwide, and 215 another countries
-- Display Table for Top live cases by Country
-- Draw Line chart for new cases
-- Draw circle of cases each country in Map
-- when click on country in Map, Popup the data of this country
 
 ### After this project
 
@@ -62,16 +72,4 @@ Next step, Bugs:
 
 `npm install` and `npm start`
 
-### Screenshot
 
-- Wire frame:
-
-<img src="https://i.imgur.com/sIUfy9g.png" />
-
-- Finish project:
-
-<img src="https://i.imgur.com/3r5YDxE.png" />
-
-- GIF:
-
-<img src="https://media.giphy.com/media/hWp2Gm0vVVdYSwBk4c/giphy.gif"/>
