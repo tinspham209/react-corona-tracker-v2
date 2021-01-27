@@ -1,5 +1,7 @@
 # Mini Project: COVID-19 Tracker
 
+### Date: 05 - Aug - 2020
+
 ### Function
 
 - Display Infected, Recovered, Deaths of Worldwide, and 215 another countries
